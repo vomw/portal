@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>Search Anything</title>
   <meta charset="utf-8">
@@ -9,24 +10,29 @@
     body {
       padding: 0 0.5em;
     }
+
     .box {
       margin-top: 1em;
     }
+
     #txtURL {
       width: 100%;
       height: 2em;
       text-indent: 0.5em;
       padding: 0.25em 0;
     }
+
     #btnGo {
       width: 100%;
       font-size: 1.5em;
     }
+
     #list a {
       margin: 1em;
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <input id="txtURL" type="text" value="https://myip.wtf" autofocus>
@@ -56,14 +62,14 @@
     sw.addEventListener('message', onSwMsg)
     sendMsgToSw(PAGE_READY_CHECK)
 
-    btnGo.onclick = function() {
+    btnGo.onclick = function () {
       const text = txtURL.value.trim()
       if (text) {
         const url = './-----' + text
         open(url, '_blank', 'noopener,noreferrer')
       }
     }
-    txtURL.onkeypress = function(e) {
+    txtURL.onkeypress = function (e) {
       if (e.keyCode === 13) {
         btnGo.onclick()
       }
@@ -75,21 +81,21 @@
       const [cmd, msg] = e.data
 
       switch (cmd) {
-      case SW_CONF_RETURN:
-        conf = msg
-        showConf()
-        break
+        case SW_CONF_RETURN:
+          conf = msg
+          showConf()
+          break
 
-      case SW_CONF_CHANGE:
-        conf = msg
-        updateSelected()
-        break
+        case SW_CONF_CHANGE:
+          conf = msg
+          updateSelected()
+          break
 
-      case SW_READY:
-        console.log('sw ready')
-        showIcons()
-        sendMsgToSw(PAGE_CONF_GET)
-        break
+        case SW_READY:
+          console.log('sw ready')
+          showIcons()
+          sendMsgToSw(PAGE_CONF_GET)
+          break
       }
     }
 
@@ -97,7 +103,7 @@
       txtURL.value = err
     }
 
-    selNode.onchange = function() {
+    selNode.onchange = function () {
       const item = this.options[this.selectedIndex]
       const node = item.value
       conf.node_default = node
@@ -114,26 +120,40 @@
     }
 
     const SITE_LIST = [
-      ['duckduckgo', 'duckduckgo.com'],
-      ['startpage-dark', 'www.startpage.com/do/mypage.pl?prfe=e1d14ecae9f99f9cf658718d22b59abe37104517186a70b70397347d0d8e4b7f7f467ef0641e91aa412764d43b3dcc60f5a73c66717a165e471ce878c99aa8aa315479729b9b150076480d4a2108'],
-      ['startpage-light', 'www.startpage.com/do/mypage.pl?prfe=e25512658d454387249a6bb25c05db7986c909a614623aaac8b8ea00c0e9e1786c4a2369a00b4d9894909fe306f16a6382686748cae0ea9fcbf3b1e0d39bf9a6c6db014fd07e845b1ca40129811b'],
-      ['nitter', 'nitter.ir/gfw_report'],
+      ['ip', 'ifconfig.co'],
+      ['cors', 'icors.vercel.app/?myip.wtf'],
+      ['archive', 'web.archive.org/'],
+      ['nitter', 'twitter.moe.ngo/gfw_report'],
       ['torproject', 'bridges.torproject.org/bridges?transport=obfs4'],
       ['torproject', 'metrics.torproject.org/userstats-bridge-country.html?country=cn'],
-      ['reddit', 'old.reddit.com/r/popular/'],
-      ['teddit', 'teddit.garudalinux.org/r/china'],
-      ['gist', 'gist.github.com/'],
+      ['reddit', 'old.reddit.com/r/popular'],
+      ['teddit', 'teddit.garudalinux.org'],
+      ['gist', 'gist.github.com/madeye'],
+      ['telegram', 't.me/s/ncov2019'],
+      ['duckduckgo', 'duckduckgo.com/?kae=t&kp=-2&kn=1&kaj=m&kay=b&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&k5=1'],
+      ['google', 'g.kfd.me'],
+      ['whoogle', 's.tokhmi.xyz'],
+      ['deepl', 'www.deepl.com/translator'],
+      ['bing', 'www.bing.com'],
+      ['v2ex', 'www.v2ex.com'],
+      ['ipfs', 'gateway.pinata.cloud/ipns/libgen.crypto'],
+      ['gfw', 'gfw.report'],
+      ['nyaa', 'nyaa.si/user/BlueLobster'],
+      ['nicovideo', 'www.nicovideo.jp/ranking/genre/anime?term=month'],
       ['pixiv', 'www.pixiv.net/users/216403'],
       ['pawoo', 'pawoo.net/@Misekai'],
-      ['nicovideo', 'www.nicovideo.jp/ranking/genre/anime?term=month'],
-      ['google', 'g.kfd.me'],
-      ['nyaa', 'nyaa.si/user/BlueLobster'],
-      ['archive', 'web.archive.org/'],
+      ['hanime', 'hanime.tv'],
+      ['nhentai', 'nhentai.net'],
+      ['exhentai', 'exhentai.org'],
+      ['yahoo', 'www.yahoo.com'],
       ['facebook', 'facebook.com/zuck'],
-      ['twitch', 'www.twitch.tv/'],
-      ['blogger', ''],
-      ['youtube', 'www.youtube.com/user/LastWeekTonight'],
-      ['flickr', ''],
+      ['twitch', 'www.twitch.tv/misekai555'],
+      ['blogger', 'micmic20220601.blogspot.com/?zx=bc7de42f33042a8'],
+      ['youtube', 'www.youtube.com/user/LastWeekTonight/videos'],
+      ['invidious', 'youtube.076.ne.jp/feed/popular'],
+      ['flickr', 'www.flickr.com/photos/gedawei'],
+      ['startpage-dark', 'www.startpage.com/do/mypage.pl?prfe=e1d14ecae9f99f9cf658718d22b59abe37104517186a70b70397347d0d8e4b7f7f467ef0641e91aa412764d43b3dcc60f5a73c66717a165e471ce878c99aa8aa315479729b9b150076480d4a2108'],
+      ['startpage-light', 'www.startpage.com/do/mypage.pl?prfe=e25512658d454387249a6bb25c05db7986c909a614623aaac8b8ea00c0e9e1786c4a2369a00b4d9894909fe306f16a6382686748cae0ea9fcbf3b1e0d39bf9a6c6db014fd07e845b1ca40129811b'],
     ]
 
     function showIcons() {
@@ -174,4 +194,5 @@
     }
   </script>
 </body>
+
 </html>
