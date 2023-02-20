@@ -13,7 +13,7 @@ jsproxy_config({
   // 节点配置
   node_map: {
     'demo-hk': {
-      label: '演示服务-香港节点',
+      label: 'node-aliyun-hk-1.etherdream.com',
       lines: {
         // 主机:权重
         'node-aliyun-hk-1.etherdream.com:8443': 1,
@@ -21,13 +21,13 @@ jsproxy_config({
       }
     },
     'demo-sg': {
-      label: '演示服务-新加坡节点',
+      label: 'node-aliyun-sg.etherdream.com',
       lines: {
         'node-aliyun-sg.etherdream.com:8443': 1,
       },
     },
     'mysite': {
-      label: '当前站点',
+      label: 'location.host',
       lines: {
         [location.host]: 1,
       }
@@ -88,11 +88,11 @@ jsproxy_config({
     'https://www.baidu.com/img/baidu_resultlogo@2.png': {
       replace: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'
     },
-    'https://www.pornhub.com/': {
-      redir: 'https://php.net/'
+    'https://www.google.com/': {
+      redir: 'https://duckduckgo.com/'
     },
-    'http://haha.com/': {
-      content: 'Hello World'
+    'http://qq.com/': {
+      content: 'QQ Forbidden'
     },
   }
 })
