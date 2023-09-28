@@ -122,7 +122,7 @@
     }
 
     function shuffle(array) {
-      let currentIndex = array.length,  randomIndex;
+      let currentIndex = array.length, randomIndex;
       // While there remain elements to shuffle.
       while (currentIndex > 0) {
         // Pick a remaining element.
@@ -134,12 +134,12 @@
       }
       return array;
     }
-    
+
     // // Used like so
     // var arr = [2, 11, 37, 42];
     // shuffle(arr);
     // console.log(arr);
-    
+
     const SITE_LIST = [
       ['4get', 'farside.link/4get'],
       ['anonymousoverflow', 'farside.link/anonymousoverflow'],
@@ -152,6 +152,8 @@
       ['browserleaks', 'browserleaks.com/webrtc'],
       ['cloudflare', 'cloudflare.com/cdn-cgi/trace'],
       ['deepl', 'farside.link/lingval'],
+      ['dnscrypt', 'dnscrypt.info/stamps/'],
+      ['dnsrecords', 'dnsrecords.io/github.com'],
       ['duckduckgo', 'duckduckgo.com/?kae=t&kp=-2&kn=1&kaj=m&kay=b&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&k5=1'],
       ['dumb', 'farside.link/dumb'],
       ['exhentai', 'exhentai.org'],
@@ -167,6 +169,7 @@
       ['gfwreport', 'gfw.report'],
       ['gist', 'gist.github.com/madeye'],
       ['github', 'github.com/trending'],
+      ['gitlab', 'gitlab.com/vomw'],
       ['google', 'g.kfd.me'],
       ['google', 'www.google.com/ncr'],
       ['gothub', 'farside.link/gothub'],
@@ -182,6 +185,7 @@
       ['ipfs', 'ipfs.github.io/public-gateway-checker'],
       ['izzysoft', 'apt.izzysoft.de/fdroid'],
       ['kagi', 'kagi.com'],
+      ['lastfm', 'www.last.fm/user/ethcat'],
       ['librarian', 'farside.link/librarian'],
       ['libreddit', 'farside.link/libreddit'],
       ['libremdb', 'farside.link/libremdb'],
@@ -213,6 +217,7 @@
       ['startpage-light', 'www.startpage.com/do/mypage.pl?prfe=e25512658d454387249a6bb25c05db7986c909a614623aaac8b8ea00c0e9e1786c4a2369a00b4d9894909fe306f16a6382686748cae0ea9fcbf3b1e0d39bf9a6c6db014fd07e845b1ca40129811b'],
       ['teddit', 'farside.link/teddit'],
       ['telegram', 't.me/s/onessr'],
+      ['test-ipv6', 'www.test-ipv6.com/'],
       ['torproject', 'bridges.torproject.org/bridges?transport=obfs4'],
       ['torproject', 'metrics.torproject.org/userstats-bridge-country.html?country=cn'],
       ['twitch', 'www.twitch.tv'],
@@ -223,8 +228,8 @@
       ['wikiless', 'farside.link/wikiless'],
       ['yahoo', 'www.yahoo.com'],
       ['youtube', 'www.youtube.com/user/LastWeekTonight/videos'],
-          ]
-  
+    ]
+
     shuffle(SITE_LIST);
 
     function showIcons() {
