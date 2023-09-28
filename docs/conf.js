@@ -86,10 +86,10 @@ jsproxy_config({
    */
   url_handler: {
     'https://www.baidu.com/': {
-      replace: 'https://www.google.com/'
+      replace: 'https://farside.link/whoogle'
     },
     'https://weibo.com/': {
-      redir: 'https://nitter.it/'
+      redir: 'https://farside.link/nitter'
     },
     'http://qq.com/': {
       content: 'QQ is disallowed! '
